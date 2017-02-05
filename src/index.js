@@ -1,8 +1,27 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import BlogPage from './components/blog-page'
+import App from './App'
+
+import {AppContainer} from 'react-hot-loader'
+
+const rootEl = document.getElementById('app');
 
 ReactDOM.render(
-  <BlogPage />,
-  document.getElementById('app')
+  <AppContainer>
+    <App/>
+  </AppContainer>,
+  rootEl
 )
+
+if (module.hot) {
+  module.hot.accept('/.App', () => {
+    const NextApp = require('./App').default;
+
+    ReactDOM.render(
+      <AppContainer>
+        <NextApp/>
+      </AppContainer>,
+      rootEl
+    )
+  })
+}
