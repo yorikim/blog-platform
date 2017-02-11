@@ -6,6 +6,7 @@ const items = [
       alt: 'Test1'
     },
     meta: {
+      likes: 1,
       author: 'Vasya',
       createdAt: new Date(2017, 1, 1),
       updatedAt: new Date(2017, 1, 2)
@@ -18,6 +19,7 @@ const items = [
       alt: 'Test2'
     },
     meta: {
+      likes: 2,
       author: 'Vanya',
       createdAt: new Date(2017, 1, 11),
       updatedAt: new Date(2017, 1, 12)
