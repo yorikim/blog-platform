@@ -14,4 +14,8 @@ const BlogList = (props) => {
   )
 }
 
+BlogList.propTypes = {
+  items: React.PropTypes.array
+}
+
 export default BlogList

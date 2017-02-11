@@ -11,4 +11,10 @@ const BlogItem = (props) => (
   </div>
 )
 
+BlogItem.propTypes = {
+  image: React.PropTypes.object,
+  text: React.PropTypes.string,
+  meta: React.PropTypes.object
+}
+
 export default BlogItem

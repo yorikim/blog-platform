@@ -23,4 +23,8 @@ class Like extends React.Component {
   }
 }
 
+Like.PropTypes = {
+  likes: React.PropTypes.number
+}
+
 export default Like;

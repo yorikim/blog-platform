@@ -15,4 +15,11 @@ const MetaInfo = (props) => {
   )
 }
 
+MetaInfo.PropTypes = {
+  author: React.PropTypes.string,
+  createdAt: React.PropTypes.instanceOf(Date),
+  updatedAt: React.PropTypes.instanceOf(Date),
+  likes: React.PropTypes.number
+}
+
 export default MetaInfo
