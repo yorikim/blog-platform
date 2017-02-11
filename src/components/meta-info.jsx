@@ -22,4 +22,9 @@ MetaInfo.PropTypes = {
   likes: React.PropTypes.number
 }
 
+MetaInfo.defaultProps = {
+  author: 'guest',
+  likes: 0
+}
+
 export default MetaInfo
