@@ -1,5 +1,6 @@
 const items = [
   {
+    id: 1,
     text: 'Test1',
     image: {
       src: "http://static.jsbin.com/images/dave.min.svg",
@@ -11,6 +12,7 @@ const items = [
     }
   },
   {
+    id: 2,
     text: 'Test2',
     image: {
       src: "http://static.jsbin.com/images/dave.min.svg",
