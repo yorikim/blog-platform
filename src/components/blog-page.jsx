@@ -1,5 +1,6 @@
 import React from 'react'
 import BlogList from './blog-list'
+import PieChart from './pie-chart'
 import {items} from 'constants/blogItems'
 import Immutable from 'immutable'
 
@@ -29,9 +30,14 @@ class BlogPage extends React.Component {
 
   render() {
     const {items} = this.state;
+    const pureItems = items.toJS();
+    const pieChartItems = pureItems.map((item) => [item.text, item.meta.likes || 0])
 
     return (
-      <BlogList items={items.toJS()} handleLike={this.handleLike.bind(this)}/>
+      <div>
+        <BlogList items={pureItems} handleLike={this.handleLike.bind(this)}/>
+        <PieChart items={pieChartItems}/>
+      </div>
     )
   }
 }
