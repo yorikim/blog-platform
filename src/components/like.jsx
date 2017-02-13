@@ -1,30 +1,15 @@
 import React from 'react'
 import {bind} from 'lodash/functions'
 
-class Like extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      likes: props.likes
-    }
-  }
-
-  handleClick() {
-    this.setState({
-      likes: this.state.likes + 1
-    })
-  }
-
-  render() {
-    return (
-      <button onClick={this.handleClick.bind(this)}>Like {this.state.likes}</button>
-    )
-  }
+const Like = (props) => {
+  return (
+    <button onClick={props.handleLike}>Like {props.likes}</button>
+  )
 }
 
 Like.PropTypes = {
-  likes: React.PropTypes.number
+  likes: React.PropTypes.number,
+  handleLike: React.PropTypes.func
 }
 
 export default Like;
