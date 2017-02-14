@@ -4,7 +4,6 @@ import c3 from 'c3'
 
 class PieChart extends React.Component {
   componentDidMount() {
-    debugger
     this.chart = c3.generate({
       bindto: ReactDOM.findDOMNode(this.refs.chart),
       data: {

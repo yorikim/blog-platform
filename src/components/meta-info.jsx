@@ -4,14 +4,13 @@ import Like from './like'
 
 const MetaInfo = (props) => {
   return (
-    <ul>
-      <li>
-        <p>Author: {props.author}</p>
-        <p>Created At: {formatDate(props.createdAt)}</p>
-        <p>Updated At: {formatDate(props.updatedAt)}</p>
-        <Like likes={props.likes} handleLike={props.handleLike} />
-      </li>
-    </ul>
+    <p className="entry-meta">
+      <span>Posted on: </span><span className="entry-date">{formatDate(props.createdAt)}</span>
+      <span> | By </span><span className="entry-author">{props.author}</span>
+      <span> | Updated: </span><span className="entry-date">{formatDate(props.updatedAt)}</span>
+      <br/>
+      <Like likes={props.likes} handleLike={props.handleLike}/>
+    </p>
   )
 }
 

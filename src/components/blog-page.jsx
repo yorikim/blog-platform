@@ -34,7 +34,7 @@ class BlogPage extends React.Component {
     const pieChartItems = pureItems.map((item) => [item.text, item.meta.likes || 0])
 
     return (
-      <div>
+      <div className="container">
         <BlogList items={pureItems} handleLike={this.handleLike.bind(this)}/>
         <PieChart items={pieChartItems}/>
       </div>

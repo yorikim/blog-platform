@@ -1,9 +1,10 @@
 import React from 'react'
 import {bind} from 'lodash/functions'
+import {Button} from 'react-bootstrap'
 
 const Like = (props) => {
   return (
-    <button onClick={props.handleLike}>Like {props.likes}</button>
+    <Button bsStyle="success" bsSize="xsmall" onClick={props.handleLike}>Like {props.likes}</Button>
   )
 }
 

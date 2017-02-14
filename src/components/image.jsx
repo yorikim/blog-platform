@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Image = (props) => (
-  <img {...props} />
+  <img {...props} className="entry-avatar"/>
 )
 
 Image.PropTypes = {
