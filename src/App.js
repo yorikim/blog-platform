@@ -1,10 +1,8 @@
-import React from 'react'
-import BlogPage from 'components/blog-page'
+import React from 'react';
+import BlogPage from 'components/blog-page';
 
-const App = () => {
-  return (
-    <BlogPage/>
-  )
-}
+const App = () => (
+  <BlogPage/>
+);
 
 export default App;

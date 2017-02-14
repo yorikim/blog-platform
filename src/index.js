@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App'
+import App from './App';
 
-import {AppContainer} from 'react-hot-loader'
+import {AppContainer} from 'react-hot-loader';
 
 const rootEl = document.getElementById('app');
 
@@ -11,7 +11,7 @@ ReactDOM.render(
     <App/>
   </AppContainer>,
   rootEl
-)
+);
 
 if (module.hot) {
   module.hot.accept('./App', () => {
@@ -22,6 +22,6 @@ if (module.hot) {
         <NextApp/>
       </AppContainer>,
       rootEl
-    )
-  })
+    );
+  });
 }
