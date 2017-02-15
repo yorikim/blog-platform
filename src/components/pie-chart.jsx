@@ -1,10 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import c3 from 'c3'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import c3 from 'c3';
 
 class PieChart extends React.Component {
   componentDidMount() {
-    debugger
     this.chart = c3.generate({
       bindto: ReactDOM.findDOMNode(this.refs.chart),
       data: {
@@ -27,12 +26,12 @@ class PieChart extends React.Component {
   render() {
     return (
       <div ref="chart"></div>
-    )
+    );
   }
 }
 
-PieChart.PropTypes = {
-  items: React.PropTypes.array
-}
+PieChart.propTypes = {
+  items: React.PropTypes.array.isRequired
+};
 
 export default PieChart;

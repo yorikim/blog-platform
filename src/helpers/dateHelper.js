@@ -1,7 +1,7 @@
-import moment from 'moment'
+import moment from 'moment';
 
 function formatDate(date) {
-  return moment(date).format("LL")
+  return moment(date).format('LL');
 }
 
-export {formatDate}
+export {formatDate};

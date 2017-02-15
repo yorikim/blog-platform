@@ -1,15 +1,13 @@
-import React from 'react'
-import {bind} from 'lodash/functions'
+import React from 'react';
+import {Button} from 'react-bootstrap';
 
-const Like = (props) => {
-  return (
-    <button onClick={props.handleLike}>Like {props.likes}</button>
-  )
-}
+const Like = (props) => (
+  <Button bsStyle="success" bsSize="xsmall" onClick={props.handleLike}>Like {props.likes}</Button>
+);
 
-Like.PropTypes = {
+Like.propTypes = {
   likes: React.PropTypes.number,
   handleLike: React.PropTypes.func
-}
+};
 
 export default Like;

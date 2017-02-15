@@ -3,7 +3,7 @@ const items = [
     id: 1,
     text: 'Test1',
     image: {
-      src: "http://static.jsbin.com/images/dave.min.svg",
+      src: 'http://static.jsbin.com/images/dave.min.svg',
       alt: 'Test1'
     },
     meta: {
@@ -15,7 +15,7 @@ const items = [
     id: 2,
     text: 'Test2',
     image: {
-      src: "http://static.jsbin.com/images/dave.min.svg",
+      src: 'http://static.jsbin.com/images/dave.min.svg',
       alt: 'Test2'
     },
     meta: {
@@ -25,6 +25,6 @@ const items = [
       updatedAt: new Date(2017, 1, 12)
     }
   }
-]
+];
 
-export {items}
+export {items};
