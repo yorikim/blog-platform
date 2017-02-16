@@ -1,5 +1,5 @@
 import React from 'react';
-import BlogPage from 'components/blog-page';
+import BlogPage from 'components/widgets/blog-page';
 
 const App = () => (
   <BlogPage/>
