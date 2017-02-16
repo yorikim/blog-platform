@@ -19,7 +19,7 @@ class BlogPage extends React.Component {
 
     this.setState({
       items: items.update(index,
-        (item) => item.setIn(['meta', 'likes'], (item.getIn(['meta', 'likes']) || 0) + 1)
+        (item) => item.updateIn(['meta', 'likes'], (value = 0) => value + 1)
       )
     });
   }

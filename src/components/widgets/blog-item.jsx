@@ -2,14 +2,19 @@ import React from 'react';
 import Image from './image';
 import TextBox from './text-box';
 import MetaInfo from './meta-info';
+import {Link} from 'react-router';
 
-const BlogItem = (props) => (
+import {postsPath} from 'helpers/routes'
+
+const BlogItem = ({item, handleLike}) => (
   <article className="post">
     <header className="entry-header">
-      <Image width="100px" height="100px" {...props.image} />
+      <Image width="100px" height="100px" {...item.image} />
     </header>
-    <TextBox text={props.text} />
-    <MetaInfo {...props.meta} handleLike={props.handleLike}/>
+    <Link to={postsPath(item.id)}>
+      <TextBox text={item.text} />
+    </Link>
+    <MetaInfo {...item.meta} handleLike={handleLike}/>
   </article>
 );
 

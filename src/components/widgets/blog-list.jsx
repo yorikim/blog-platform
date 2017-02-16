@@ -4,7 +4,7 @@ import {map} from 'lodash/collection';
 
 const BlogList = (props) => {
   const list = map(props.items, (item) =>
-    <BlogItem key={item.id} {...item} handleLike={
+    <BlogItem key={item.id} item={item} handleLike={
       () => {
         props.handleLike(item.id);
       }
@@ -12,9 +12,9 @@ const BlogList = (props) => {
   );
 
   return (
-    <ul>
+    <div>
       {list}
-    </ul>
+    </div>
   );
 };
 
