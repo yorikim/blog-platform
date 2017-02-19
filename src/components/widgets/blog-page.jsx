@@ -1,16 +1,29 @@
 import React from 'react';
 import BlogList from './blog-list';
 import PieChart from './pie-chart';
-import {items} from 'constants/blogItems';
 import Immutable from 'immutable';
+import request from 'superagent';
+import {server} from 'constants/settings';
 
 class BlogPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      items: Immutable.fromJS(items)
+      items: Immutable.List([])
     };
+  }
+
+  componentDidMount() {
+    this.fetchPosts();
+  }
+
+  fetchPosts() {
+    request.get(
+      `${server}/posts/`,
+      {},
+      (err, res) => this.setState({items: Immutable.fromJS(res.body)})
+    );
   }
 
   handleLike(itemId) {
@@ -19,7 +32,7 @@ class BlogPage extends React.Component {
 
     this.setState({
       items: items.update(index,
-        (item) => item.setIn(['meta', 'likes'], (item.getIn(['meta', 'likes']) || 0) + 1)
+        (item) => item.updateIn(['meta', 'likes'], (value = 0) => value + 1)
       )
     });
   }
