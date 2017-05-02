@@ -1,14 +1,18 @@
 import React from 'react';
 import BlogItem from './blog-item';
-import {map} from 'lodash/collection';
+import { map } from 'lodash/collection';
 
 const BlogList = (props) => {
   const list = map(props.items, (item) =>
-    <BlogItem key={item.id} item={item} handleLike={
-      () => {
-        props.handleLike(item.id);
+    <BlogItem
+      key={item.id}
+      item={item}
+      handleLike={
+        () => {
+          props.handleLike(item.id);
+        }
       }
-    }/>
+    />
   );
 
   return (

@@ -2,11 +2,11 @@ import React from 'react';
 import Image from './image';
 import TextBox from './text-box';
 import MetaInfo from './meta-info';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 
-import {postsPath} from 'helpers/routes'
+import { postsPath } from 'helpers/routes'
 
-const BlogItem = ({item, handleLike}) => (
+const BlogItem = ({ item, handleLike }) => (
   <article className="post">
     <header className="entry-header">
       <Image width="100px" height="100px" {...item.image} />
@@ -14,7 +14,7 @@ const BlogItem = ({item, handleLike}) => (
     <Link to={postsPath(item.id)}>
       <TextBox text={item.text} />
     </Link>
-    <MetaInfo {...item.meta} handleLike={handleLike}/>
+    <MetaInfo {...item.meta} handleLike={handleLike} />
   </article>
 );
 
