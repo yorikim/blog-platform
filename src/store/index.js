@@ -4,10 +4,12 @@ import thunk from 'redux-thunk';
 import DevTools from 'containers/DevTools'
 import reducers from 'reducers';
 
+import APIMiddleware from 'middleware/API';
+
 const store = createStore(
   reducers,
   compose(
-    applyMiddleware(thunk),
+    applyMiddleware(thunk, APIMiddleware),
     DevTools.instrument()
   )
 );
