@@ -1,23 +1,35 @@
-const webpack = require('webpack');
-const webpackDevServer = require('webpack-dev-server');
+const path = require('path');
+require('app-module-path').addPath(path.join(process.cwd(), 'src'));
+require('./globals');
+require('babel-core/register');
+require.extensions['.css'] = () => {
+};
 
-const config = require('../../webpack.config.js');
+const express = require('express');
+const application = express();
 
-const host = 'localhost';
-const port = 3000;
-
-
-webpack(config)
-new webpackDevServer(webpack(config), {
-  hot: true,
-  historyApiFallback: true,
-  publicPath: config.output.publicPath,
-  stats: {
-    colors: true
-  }
-}).listen(port, host, (err) => {
-  if (err)
-    console.log(err);
-
-  console.log(`Listening at host: ${host} port: ${port}`);
+application.use(express.static('src/static'));
+application.set('views', __dirname);
+application.set('view engine', 'ejs');
+application.get('*', require('./render').default);
+application.listen(3000, () => {
+  console.log('Server')
 });
+
+const webpack = require('webpack');
+const config = require('../../webpack.config.js').default;
+const webpackDev = require('webpack-dev-middleware');
+const webpackHot = require('webpack-hot-middleware');
+const compiler = webpack(config);
+
+application.use(webpackHot(compiler));
+application.use(
+  webpackDev(
+    compiler,
+    {
+      hot: true,
+      publicPath: config.output.publicPath,
+      stats: { colors: true }
+    }
+  )
+);
