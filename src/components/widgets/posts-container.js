@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import BlogList from 'components/widgets/blog-list';
+import BlogList from 'components/views/index';
 
 const stateToProps = (state) => ({
   items: state.posts.entries,

@@ -4,6 +4,8 @@ import c3 from 'c3';
 
 class PieChart extends React.Component {
   componentDidMount() {
+    if (!__CLIENT__) return;
+
     this.chart = c3.generate({
       bindto: ReactDOM.findDOMNode(this.refs.chart),
       data: {
@@ -14,10 +16,14 @@ class PieChart extends React.Component {
   }
 
   componentWillUnmount() {
+    if (!__CLIENT__) return;
+
     this.chart.destroy();
   }
 
   componentWillReceiveProps(nextProps) {
+    if (!__CLIENT__) return;
+
     this.chart.load({
       columns: nextProps.items
     });
